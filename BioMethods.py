@@ -69,6 +69,13 @@ def BeautifulOutput(DISCorDATA):
     out_string+='</b>'
     return out_string
 
+def ListDataInFasta(file_info):
+    with open('TEST.txt', 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+        DISCRIPTIONS =  lines[::2]
+        DATA =  lines[1::2]
+        return [DISCRIPTIONS, DATA]
+
 
 #Разворот последовательности
 def ReverseNa(NA):
@@ -156,13 +163,6 @@ def OutFasta(file_name,description, NA):
 #Принятие и обработка файла
     #ДОДЕЛАТЬ определяет фаста или мультифаста
     #Например РАЗВЕРНУТЬ ВСЕ, КОМПЛИМЕНТАРНОЕ ВСЕ, ТЕМПЕРАТУРУ ВСЕГО, ПРАЙМЕРЫ И ЕЩЕ ЧЕНИТЬ (но это уже после tkinter, наверное)
-
-def ListDataInFasta(file_info):
-    with open('TEST.txt', 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-        DISCRIPTIONS =  lines[::2]
-        DATA =  lines[1::2]
-        return [DISCRIPTIONS, DATA]
 
 #Lambda-red recombination
 def LambdaRedRecombination(mRNA, genomeInsertion, start, stop):
